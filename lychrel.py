@@ -1,29 +1,29 @@
 import datetime
 
-def reverseNumber(num):
+def reverseNumber(number):
     rnum = 0
-    while num > 0:
-        rem = num % 10
+    while number > 0:
+        rem = number % 10
         rnum = rnum * 10 + rem
-        num = num // 10
+        number = number // 10
     return rnum
 
 rev = reverseNumber
 
-def checkPalindrome(num):
-    rnum = rev(num)
-    return num == rnum
+def checkPalindrome(number):
+    rnum = rev(number)
+    return number == rnum
 
 cp = checkPalindrome
 
-def reverseAdd(num):
-    return num + rev(num)
+def reverseAdd(number):
+    return number + rev(number)
 
 ra = reverseAdd
 
-def checkLychrel(num, iter=5000000):
+def checkLychrel(number, iter=5000000):
     for i in range(iter):
-        ranum = ra(num)
+        ranum = ra(number)
         if cp(ranum):
             return False
     return True
@@ -31,10 +31,10 @@ def checkLychrel(num, iter=5000000):
 cl = checkLychrel
 
 
-num = int(input("Enter a number: "))
-print(f"Checking if {num} is Lychrel, over 5,000,000 iterations!")
+number = int(input("Enter a number: "))
+print(f"Checking if {number} is Lychrel, over 5,000,000 iterations!")
 before_exec = datetime.datetime.now()
-if cl(num):
-    print(f"{num} is Lychrel")
+if cl(number):
+    print(f"{number} is Lychrel")
 else:
-    print(f"{num} is not Lychrel")
+    print(f"{number} is not Lychrel")
